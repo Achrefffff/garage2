@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un employé{% endblock %}
+
+{% block body %}
+    <h1>Ajouter un employé</h1>
+    <br>
+    
+    {{ form_start(registrationForm) }}
+        {{form_row(registrationForm.nom)}}
+        {{form_row(registrationForm.prenom)}}
+        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}
+       
+
+        <button type="submit" class="btn btn-info btn-lg">Inscrire</button>
+    {{ form_end(registrationForm) }}
+{% endblock %}

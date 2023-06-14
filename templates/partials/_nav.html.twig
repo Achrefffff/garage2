@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{{ path('app_home') }}">
+      <img src="logo.png" alt="" width="30" height="24">
+    </a>
+    <a class="navbar-brand text-primary" href="{{ path('app_home') }}">Garage Vincent Parrot</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item mb-1">
+          <a class="nav-link active text-light" aria-current="page" href="{{ path('app_home') }}">Accueil</a>
+        </li>
+        <li class="nav-item mb-1">
+          <a class="nav-link text-light" href="{{ path('app_voiture') }}">Voiture</a>
+        </li>
+        
+        <li class="nav-item mb-1">
+          <a class="nav-link text-light" href="{{ path('contact_form') }}" tabindex="-1" aria-disabled="true">Contact</a>
+        </li>
+        {% if is_granted('ROLE_ADMIN') %}
+        <li class="nav-item mb-1">
+          <a class="nav-link text-light"  tabindex="-1" aria-disabled="true" href="{{ path('app_register') }}">Gestion-employes</a>
+        </li>
+        {% endif %}
+        {% if is_granted('ROLE_USER') %}
+        <li class="nav-item mb-1">
+          <a class="nav-link text-light" href="{{ path('admin') }}" tabindex="-1" aria-disabled="true">Dashboard</a>
+        </li>
+        {% endif %}
+        
+      </ul>
+      <ul class="navbar-nav d-flex">
+        
+        
+        
+        
+        
+          {% if app.user %}
+        <li class="nav-item">
+          <a class="nav-link text-light text-primary" href="{{ path('app_logout') }}" tabindex="-1" aria-disabled="true">Déconnexion</a>
+        </li>
+        {% else %}
+          
+        <li class="nav-item me-2">
+        <a class="nav-link text-light text-primary" href="{{ path('app_login') }}" tabindex="-1" aria-disabled="true">Connexion</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>

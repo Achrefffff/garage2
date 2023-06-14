@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+<div class="b-example-divider"></div>
+
+  <div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="photo01.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Garage Vincent Parrot</h1>
+        <p class="lead">Vous cherchez un garagiste de confiance pour prendre soin de votre véhicule ? Ne cherchez plus ! V.parrot propose une vaste gamme de services pour répondre à tous vos besoins automobiles.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% include "service/serve.html.twig" %}
+{% include "temoignage/testemonial.html.twig" %}
+
+<h1 class="text-center p-4">Temoignages de nos clients</h1>
+
+<div class="row">
+  {% for temoin in temoignages %}
+    {% if temoin.isValid %}
+      <div class="col-md-4 mb-3">
+        <div class="card">
+          <div class="card-header bg-info">
+            Note : {{ temoin.note }} / 5
+          </div>
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p>{{ temoin.commentaire|raw }}</p>
+              <footer class="blockquote-footer">{{ temoin.nom }} {{ temoin.prenom }}</footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+{% include "partials/_footer.html.twig" %}
+{% endblock %}

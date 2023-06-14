@@ -1,0 +1,20 @@
+{% block body %}
+    <div class="container">
+        <div class="p-4 text-center ">
+            <h1 class="p-4">Nos services</h1>
+        </div>
+
+        <div class="row justify-content-center ">
+            {% for service in services %}
+                <div class="col-md-4">
+                    <div class="card mb-3 ">
+                        <div class="card-body">
+                            <h2 class="text-info">{{ service.titre }}</h2>
+                            <p class="card-text description">{{ service.description|raw }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

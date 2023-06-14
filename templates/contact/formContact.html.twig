@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contactez Nous{% endblock %}
+
+{% block body %}
+    <h1>Contactez-nous</h1>
+
+    {{ form_start(form) }}
+    
+    {{ form_row(form.nom) }}
+    {{ form_row(form.prenom) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.telephone) }}
+    {{ form_row(form.message) }}
+
+    <div class="form-group">
+        <label for="voiture_id">Clickez pour choisir une voiture :</label>
+        <select id="voiture_id" name="voiture_id" class="form-control">
+            {% for voiture in voitures %}
+                <option value="{{ voiture.id }}">{{ voiture.nom }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-info btn-lg">Envoyer</button>
+
+    {{ form_end(form) }}
+    {% include "partials/_footer.html.twig" %}
+{% endblock %}

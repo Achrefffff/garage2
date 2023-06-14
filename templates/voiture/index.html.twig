@@ -1,0 +1,106 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello VoitureController!{% endblock %}
+
+{% block body %}
+<div class="container my-5">
+  <div class="p-5 text-center rounded-3">
+    <h1 class="text-body-emphasis">Explorez notre sélection de voitures d'occasion de qualité supérieure et préparez-vous à de nouvelles aventures !</h1>
+    <p class="lead">
+      Chez nous, l'achat d'une voiture d'occasion ne se résume pas simplement à obtenir un véhicule fiable.
+      C'est une expérience où la satisfaction du client est au cœur de nos préoccupations.
+      Notre équipe expérimentée est là pour vous guider à chaque étape du processus,
+      répondre à toutes vos questions et vous aider à trouver la voiture parfaite qui correspond à votre style de vie
+      et à votre budget.
+    </p>
+  </div>
+</div>
+<h2 class="text-center"> Nos Voitures </h2>
+<form id="filter-form" action="{{ path('app_voiture') }}" method="GET">
+    <!-- Champs de filtres -->
+    <div class="row">
+        <div class="col">
+            <label for="prix-min">Prix minimum :</label>
+            <input type="text" id="prix-min" name="prix_min">
+        </div>
+        <div class="col">
+            <label for="prix-max">Prix maximum :</label>
+            <input type="text" id="prix-max" name="prix_max">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="km-min">Kilométrage minimum :</label>
+            <input type="text" id="km-min" name="km_min">
+        </div>
+        <div class="col">
+            <label for="km-max">Kilométrage maximum :</label>
+            <input type="text" id="km-max" name="km_max">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="annee-min">Année minimum :</label>
+            <input type="text" id="annee-min" name="annee_min">
+        </div>
+        <div class="col">
+            <label for="annee-max">Année maximum :</label>
+            <input type="text" id="annee-max" name="annee_max">
+        </div>
+    </div>
+    <!-- Bouton de soumission -->
+    <div class="row">
+        <div class="col">
+            <button type="submit" class="btn btn-primary">Filtrer</button>
+        </div>
+    </div>
+</form>
+
+<br>
+<div class="row row-cols-3 g-4">
+  {% for voiture in voitures %}
+  <div class="col">
+    <div class="card">
+      <img src="{{ vich_uploader_asset(voiture, 'imageFile') }}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{voiture.nom}}</h5>
+        <ul>
+          <li>Prix : {{voiture.prix}} $</li>
+          <li>Date de Circulation : {{voiture.dateCirculation}}</li>
+          <li>kilometrage : {{voiture.kilometrage}}</li>
+          <li>Equipement : {{voiture.equipement}}</li>
+          <li>Options : {{voiture.options}}</li>
+        </ul>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{voiture.id}}">
+          En savoir plus
+        </button>
+       <a href="{{ path('contact_form') }}" class="btn btn-primary">Contactez Nous</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- Modal -->
+{% for voiture in voitures %}
+<div class="modal fade" id="exampleModal{{voiture.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{voiture.nom}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        {{voiture.caracteristiques}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+{% include "partials/_footer.html.twig" %}
+
+{% endblock %}
