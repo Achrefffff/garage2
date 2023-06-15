@@ -60,7 +60,7 @@
 <div class="row row-cols-3 g-4">
   {% for voiture in voitures %}
   <div class="col">
-    <div class="card">
+    <div class="card card-custom">
       <img src="{{ vich_uploader_asset(voiture, 'imageFile') }}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">{{voiture.nom}}</h5>
