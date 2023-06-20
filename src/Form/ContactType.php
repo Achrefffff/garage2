@@ -13,40 +13,40 @@ class ContactType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('nom',TextType::class,[
-                'attr'=>[
-                    'class' =>'form-control mt-3 mb-3',
+            ->add('nom', TextType::class, [
+                'attr' => [
+                    'class' => 'form-control mt-3 mb-3',
                 ],
-                'label'=> 'Nom',
-                'required'=> true
+                'label' => 'Nom',
+                'required' => true
             ])
-            ->add('prenom' ,TextType::class,[
-                'attr'=>[
-                    'class' =>'form-control mt-3 mb-3',
+            ->add('prenom', TextType::class, [
+                'attr' => [
+                    'class' => 'form-control mt-3 mb-3',
                 ],
-                'label'=> 'Prenom',
-                'required'=> true
+                'label' => 'Prenom',
+                'required' => true
             ])
-            ->add('email',TextType::class,[
-                'attr'=>[
-                    'class' =>'form-control mt-3 mb-3',
+            ->add('email', TextType::class, [
+                'attr' => [
+                    'class' => 'form-control mt-4 mb-3 ml-3 mr-3',
                 ],
-                'label'=> 'Adresse Email',
-                'required'=> true
+                'label' => 'Adresse Email',
+                'required' => true
             ])
-            ->add('telephone',TextType::class,[
-                'attr'=>[
-                    'class' =>'form-control mt-3 mb-3',
+            ->add('telephone', TextType::class, [
+                'attr' => [
+                    'class' => 'form-control mt-3 mb-3',
                 ],
-                'label'=> 'Numero de telephone',
-                'required'=> true
+                'label' => 'Numero de telephone',
+                'required' => true
             ])
-            ->add('message',TextType::class,[
-                'attr'=>[
-                    'class' =>'form-control mt-3 mb-3',
+            ->add('message', TextType::class, [
+                'attr' => [
+                    'class' => 'form-control mt-3 mb-3',
                 ],
-                'label'=> 'Votre message',
-                'required'=> true
+                'label' => 'Votre message',
+                'required' => true
             ])
         ;
     }
