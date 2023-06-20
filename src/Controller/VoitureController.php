@@ -29,7 +29,6 @@ class VoitureController extends AbstractController
             throw $this->createNotFoundException('Veuillez ajouter un horaire depuis le dashboard. Aucun service trouvé.');
         }
 
-        // Récupérer les valeurs des filtres depuis la requête
         $prixMin = $request->query->get('prix_min');
         $prixMax = $request->query->get('prix_max');
         $kmMin = $request->query->get('km_min');
@@ -37,7 +36,6 @@ class VoitureController extends AbstractController
         $anneeMin = $request->query->get('annee_min');
         $anneeMax = $request->query->get('annee_max');
 
-        // Appliquer les filtres aux voitures
         $voituresFiltrees = $voitureRepository->findByFilters($prixMin, $prixMax, $kmMin, $kmMax, $anneeMin, $anneeMax);
 
         return $this->render('voiture/index.html.twig', [

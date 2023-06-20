@@ -13,7 +13,7 @@
     {{ form_row(form.telephone) }}
     {{ form_row(form.message) }}
 
-    <div class="form-group">
+    <div class="form-group mx-auto">
         <label for="voiture_id">Clickez pour choisir une voiture :</label>
         <select id="voiture_id" name="voiture_id" class="form-control">
             {% for voiture in voitures %}
@@ -22,7 +22,7 @@
         </select>
     </div>
 
-    <button type="submit" class="btn btn-info btn-lg">Envoyer</button>
+    <button type="submit" class="btn btn-dark text-white btn-md mt-2">Envoyer</button>
 
     {{ form_end(form) }}
     {% include "partials/_footer.html.twig" %}

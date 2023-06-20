@@ -18,40 +18,40 @@
 <h2 class="text-center"> Nos Voitures </h2>
 <form id="filter-form" action="{{ path('app_voiture') }}" method="GET">
     <!-- Champs de filtres -->
-    <div class="row">
-        <div class="col">
+    <div class="row ">
+        <div class="col m-4 text-center">
             <label for="prix-min">Prix minimum :</label>
-            <input type="text" id="prix-min" name="prix_min">
+            <input type="text" id="prix-min" name="prix_min" class="form-control">
         </div>
-        <div class="col">
+        <div class="col m-4 text-center">
             <label for="prix-max">Prix maximum :</label>
-            <input type="text" id="prix-max" name="prix_max">
+            <input type="text" id="prix-max" name="prix_max" class="form-control">
         </div>
     </div>
     <div class="row">
-        <div class="col">
+        <div class="col m-4 text-center">
             <label for="km-min">Kilométrage minimum :</label>
-            <input type="text" id="km-min" name="km_min">
+            <input type="text" id="km-min" name="km_min" class="form-control">
         </div>
-        <div class="col">
-            <label for="km-max">Kilométrage maximum :</label>
-            <input type="text" id="km-max" name="km_max">
+        <div class="col m-4 text-center">
+            <label for="km-max ">Kilométrage maximum :</label>
+            <input type="text" id="km-max" name="km_max" class="form-control">
         </div>
     </div>
     <div class="row">
-        <div class="col">
+        <div class="col m-4 text-center">
             <label for="annee-min">Année minimum :</label>
-            <input type="text" id="annee-min" name="annee_min">
+            <input type="text" id="annee-min" name="annee_min" class="form-control">
         </div>
-        <div class="col">
+        <div class="col m-4 text-center">
             <label for="annee-max">Année maximum :</label>
-            <input type="text" id="annee-max" name="annee_max">
+            <input type="text" id="annee-max" name="annee_max" class="form-control">
         </div>
     </div>
     <!-- Bouton de soumission -->
-    <div class="row">
+    <div class="row text-center">
         <div class="col">
-            <button type="submit" class="btn btn-primary">Filtrer</button>
+            <button type="submit" class="btn btn-dark btn-sm-lg">Filtrer</button>
         </div>
     </div>
 </form>
@@ -71,17 +71,17 @@
           <li>Equipement : {{voiture.equipement}}</li>
           <li>Options : {{voiture.options}}</li>
         </ul>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{voiture.id}}">
+        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal{{voiture.id}}">
           En savoir plus
         </button>
-       <a href="{{ path('contact_form') }}" class="btn btn-primary">Contactez Nous</a>
+       <a href="{{ path('contact_form') }}" class="btn btn-dark">Contactez Nous</a>
       </div>
     </div>
   </div>
   {% endfor %}
 </div>
 
-<!-- Modal -->
+
 {% for voiture in voitures %}
 <div class="modal fade" id="exampleModal{{voiture.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
