@@ -88,10 +88,7 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
-        ],
-        "build": "webpack -p --config ./resources/webpack/webpack.config.js --display-error-details",
-        "watch": "webpack -d --watch --config ./resources/webpack/webpack.config.js --display-error-details",
-        "heroku-postbuild": "webpack -p --config ./resources/webpack/webpack.config.js"
+        ]
     },
     "conflict": {
         "symfony/symfony": "*"
@@ -108,7 +105,7 @@
         "symfony/browser-kit": "6.3.*",
         "symfony/css-selector": "6.3.*",
         "symfony/debug-bundle": "6.3.*",
-        "symfony/maker-bundle": "^1.49",
+        "symfony/maker-bundle": "^1.48",
         "symfony/phpunit-bridge": "^6.3",
         "symfony/stopwatch": "6.3.*",
         "symfony/web-profiler-bundle": "6.3.*"
