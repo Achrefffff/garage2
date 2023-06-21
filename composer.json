@@ -88,7 +88,8 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
-        ]
+        ],
+        "postinstall": "encore production --progress"
     },
     "conflict": {
         "symfony/symfony": "*"
