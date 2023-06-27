@@ -20,9 +20,11 @@
         "dev-server": "encore dev-server",
         "dev": "encore dev",
         "watch": "encore dev --watch"
+        
     },
     "engines": {
         "node": "v18.16.0",
-        "npm" :"9.5"
+        "npm" :"9.5",
+        "start": "node script.js"
     }
 }
