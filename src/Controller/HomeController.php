@@ -52,7 +52,7 @@ class HomeController extends AbstractController
             $entityManager = $this->managerRegistry->getManager();
             $entityManager->persist($temoignage);
             $entityManager->flush();
-            // Effectuer des opérations supplémentaires si nécessaire (par exemple, enregistrer en base de données)
+            
 
             // Rediriger l'utilisateur vers la page d'accueil après soumission réussie
             return $this->redirectToRoute('app_home');
