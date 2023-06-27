@@ -19,10 +19,7 @@
     "scripts": {
         "dev-server": "encore dev-server",
         "dev": "encore dev",
-        "watch": "encore dev --watch",
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "serve": "webpack-dev-server --mode=development",
-        "start" :"node server.js"
+        "watch": "encore dev --watch"
         
     },
     "engines": {
