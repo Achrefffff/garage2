@@ -24,7 +24,6 @@
     },
     "engines": {
         "node": "v18.16.0",
-        "npm" :"9.5",
-        "start": "node script.js"
+        "npm" :"9.5"
     }
 }
