@@ -1,11 +1,4 @@
-<VirtualHost *:80>
-    # ...
-    DocumentRoot /var/www/project/public
-
-    <Directory /var/www/project/public>
-        AllowOverride None
-
-        # For a symfony application to work properly, you MUST store this .htaccess in
+# For a symfony application to work properly, you MUST store this .htaccess in
 # the same directory as your front controller, index.php, in a standard symfony
 # web application is under the "public" project subdirectory.
 
@@ -72,5 +65,3 @@ DirectoryIndex index.php
         RedirectMatch 307 ^/$ /index.php/
     </IfModule>
 </IfModule>
-    </Directory>
-</VirtualHost>
