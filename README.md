@@ -21,28 +21,28 @@ Quand l'administrateur se connecte, il peut trouver l'onglet "Gestion des employ
 
 **INSTALLATION**
 
-1/ git clone https://github.com/Achrefffff/garage2
-2/ Installez les dépendances du projet en exécutant la commande : composer install
-3/ Configurez les informations de la base de données dans le fichier .env et exécutez les migrations avec la commande     suivante : php bin/console doctrine:migrations:migrate
-4/ Exécutez la commande suivante : composer require --dev orm-fixtures
-5/ puis éxécutez la commande : composer require --dev doctrine/doctrine-fixtures-bundle
-6/ Enfin exécutez la commande suivante pour générer les fichiers de fixtures : php bin/console doctrine:fixtures:load
-7/ Démarrez le serveur de développement avec la commande : symfony serve
-8/ Accédez au site web à l'adresse http://localhost:8000 dans votre navigateur.
+1/ git clone https://github.com/Achrefffff/garage2  
+2/ Installez les dépendances du projet en exécutant la commande : composer install  
+3/ Configurez les informations de la base de données dans le fichier .env et exécutez les migrations avec la commande     suivante : php bin/console doctrine:migrations:migrate  
+4/ Exécutez la commande suivante : composer require --dev orm-fixtures  
+5/ puis éxécutez la commande : composer require --dev doctrine/doctrine-fixtures-bundle  
+6/ Enfin exécutez la commande suivante pour générer les fichiers de fixtures : php bin/console doctrine:fixtures:load  
+7/ Démarrez le serveur de développement avec la commande : symfony serve  
+8/ Accédez au site web à l'adresse http://localhost:8000 dans votre navigateur.  
 
-**EN LOCAL** : Admin -- V.parrot@garage.ecf  mot de passe : 123456 -- Employé -- choisir un email générer par les fixtures dans la base de donné et le mot de passe : 123456 -- 
+**EN LOCAL** : Admin -- V.parrot@garage.ecf  mot de passe : 123456 -- Employé -- choisir un email générer par les fixtures dans la base de donné et le mot de passe : 123456 --   
 
 **LIEN de l application deployer sur heroku** : http://gentle-cove-35949-a829e8c827e7.herokuapp.com
                                             ADMIN: vincentparrot@garage.ecf mot de passe: password
-                                            EMPLOYE: employe@garage.ecf mot de passe: password
+                                            EMPLOYE: employe@garage.ecf mot de passe: password  
 
 
 **TECHNOLOGIES UTILISEES**
 
-Symfony 6.3.1
-Twig - Moteur de templates - Framework PHP
-Doctrine - ORM pour la gestion de la base de données
-HTML, CSS,Bootstrap JavaScript - Front-end
+Symfony 6.3.1  
+Twig - Moteur de templates - Framework PHP  
+Doctrine - ORM pour la gestion de la base de données  
+HTML, CSS,Bootstrap JavaScript - Front-end  
 
-Auteur
+Auteur  
 **ACHREF** .
