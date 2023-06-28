@@ -2,7 +2,6 @@
 
 namespace App\Security;
 
-use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,6 +15,7 @@ use Symfony\Component\Security\Http\Authenticator\Passport\Badge\UserBadge;
 use Symfony\Component\Security\Http\Authenticator\Passport\Credentials\PasswordCredentials;
 use Symfony\Component\Security\Http\Authenticator\Passport\Passport;
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class AppAuthAuthenticator extends AbstractLoginFormAuthenticator
 {
@@ -25,7 +25,8 @@ class AppAuthAuthenticator extends AbstractLoginFormAuthenticator
 
     public function __construct(
         private UrlGeneratorInterface $urlGenerator,
-        private EntityManagerInterface $entityManager
+        private EntityManagerInterface $entityManager,
+        private UserPasswordEncoderInterface $passwordEncoder
     ) {
     }
 
@@ -34,25 +35,6 @@ class AppAuthAuthenticator extends AbstractLoginFormAuthenticator
         $email = $request->request->get('email', '');
 
         $request->getSession()->set(Security::LAST_USERNAME, $email);
-
-        // Check if the administrator account needs to be created
-        if ($email === 'vincentparrot@garage.ecf') {
-            $adminUser = new User();
-            $adminUser->setEmail('vincentparrot@garage.ecf');
-            $adminUser->setNom('Vincent');
-            $adminUser->setPrenom('Parrot');
-
-            // Set the password (replace 'password' with the actual password)
-            $hashedPassword = password_hash('password', PASSWORD_DEFAULT);
-            $adminUser->setPassword($hashedPassword);
-
-            // Set the admin role
-            $adminUser->setRoles(['ROLE_ADMIN']);
-
-            // Save the administrator account to the database
-            $this->entityManager->persist($adminUser);
-            $this->entityManager->flush();
-        }
 
         return new Passport(
             new UserBadge($email),
