@@ -2,7 +2,6 @@
 
 namespace App\Security;
 
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,7 +14,6 @@ use Symfony\Component\Security\Http\Authenticator\Passport\Badge\UserBadge;
 use Symfony\Component\Security\Http\Authenticator\Passport\Credentials\PasswordCredentials;
 use Symfony\Component\Security\Http\Authenticator\Passport\Passport;
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class AppAuthAuthenticator extends AbstractLoginFormAuthenticator
 {
@@ -23,11 +21,8 @@ class AppAuthAuthenticator extends AbstractLoginFormAuthenticator
 
     public const LOGIN_ROUTE = 'app_login';
 
-    public function __construct(
-        private UrlGeneratorInterface $urlGenerator,
-        private EntityManagerInterface $entityManager,
-        private UserPasswordEncoderInterface $passwordEncoder
-    ) {
+    public function __construct(private UrlGeneratorInterface $urlGenerator)
+    {
     }
 
     public function authenticate(Request $request): Passport
@@ -38,12 +33,7 @@ class AppAuthAuthenticator extends AbstractLoginFormAuthenticator
 
         return new Passport(
             new UserBadge($email),
-            new PasswordCredentials(
-                $request->request->get('password', ''),
-                function ($credentials, UserInterface $user) {
-                    return password_verify($credentials, $user->getPassword());
-                }
-            ),
+            new PasswordCredentials($request->request->get('password', '')),
             [
                 new CsrfTokenBadge('authenticate', $request->request->get('_csrf_token')),
             ]
@@ -56,7 +46,9 @@ class AppAuthAuthenticator extends AbstractLoginFormAuthenticator
             return new RedirectResponse($targetPath);
         }
 
-        return new RedirectResponse($this->urlGenerator->generate('app_home'));
+        // For example:
+         return new RedirectResponse($this->urlGenerator->generate('app_home'));
+        //throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
 
     protected function getLoginUrl(Request $request): string
