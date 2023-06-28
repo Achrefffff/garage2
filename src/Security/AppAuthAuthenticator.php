@@ -15,7 +15,7 @@ use Symfony\Component\Security\Http\Authenticator\Passport\Badge\UserBadge;
 use Symfony\Component\Security\Http\Authenticator\Passport\Credentials\PasswordCredentials;
 use Symfony\Component\Security\Http\Authenticator\Passport\Passport;
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
-
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class AppAuthAuthenticator extends AbstractLoginFormAuthenticator
 {
@@ -38,7 +38,12 @@ class AppAuthAuthenticator extends AbstractLoginFormAuthenticator
 
         return new Passport(
             new UserBadge($email),
-            new PasswordCredentials($request->request->get('password', '')),
+            new PasswordCredentials(
+                $request->request->get('password', ''),
+                function ($credentials, UserInterface $user) {
+                    return password_verify($credentials, $user->getPassword());
+                }
+            ),
             [
                 new CsrfTokenBadge('authenticate', $request->request->get('_csrf_token')),
             ]
