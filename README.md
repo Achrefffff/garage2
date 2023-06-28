@@ -2,7 +2,7 @@
 
 Ce projet consiste à développer une application web vitrine pour le Garage V. Parrot, un garage automobile situé à Toulouse, offrant des services de réparation de la carrosserie et de la mécanique, l'entretien régulier des voitures, ainsi que la vente de véhicules d'occasion.
 
-FONCTIONNALITES :
+**FONCTIONNALITES** :
 
 -Se connecter: Les utilisateurs (administrateur et employés) peuvent se connecter à l'application à l'aide de leur adresse e-mail et d'un mot de passe sécurisé.
 Quand l'administrateur se connecte, il peut trouver l'onglet "Gestion des employés" pour gérer les employés. En revanche, lorsque l'employé se connecte, il ne trouve pas l'onglet de gestion des employés."
@@ -19,7 +19,7 @@ Quand l'administrateur se connecte, il peut trouver l'onglet "Gestion des employ
 
 -Recueillir les témoignages des clients: Les visiteurs peuvent laisser des témoignages contenant un nom, un commentaire et une note. Les avis seront modérés par un employé du garage et affichés sur la page d'accueil. Les employés peuvent également ajouter des témoignages depuis leur espace dédié.
 
-INSTALLATION
+**INSTALLATION**
 
 1/ git clone https://github.com/Achrefffff/garage2
 2/ Installez les dépendances du projet en exécutant la commande : composer install
@@ -37,7 +37,7 @@ LIEN de l application deployer sur heroku : http://gentle-cove-35949-a829e8c827e
                                             EMPLOYE: employe@garage.ecf mot de passe: password
 
 
-TECHNOLOGIES UTILISEES
+**TECHNOLOGIES UTILISEES**
 
 Symfony 6.3.1
 Twig - Moteur de templates - Framework PHP
