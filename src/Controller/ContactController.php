@@ -28,15 +28,10 @@ class ContactController extends AbstractController
         VoitureRepository $voitureRepository
     ): Response {
         $voitures = $voitureRepository->findAll();
-        if (!$voitures) {
-            throw $this->createNotFoundException('Veuillez ajouter une voiture depuis le dashboard. Aucun service trouvé.');
-        }
+        
 
         $horaires = $horaireRepository->findAll();
-        if (!$horaires) {
-            throw $this->createNotFoundException('Veuillez ajouter un horaire depuis le dashboard. Aucun horaire trouvé.');
-        }
-
+        
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
 

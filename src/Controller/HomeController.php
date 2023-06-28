@@ -26,19 +26,14 @@ class HomeController extends AbstractController
     public function index(Request $request, ServicesRepository $servicesRepository, HoraireRepository $horaireRepository,TemoignageRepository $temoignageRepository): Response
     {   
         $temoignages=$temoignageRepository->findAll();
-        if (!$temoignages) {
-            throw $this->createNotFoundException('Veuillez ajouter un temoignage depuis le dashboard. Aucun service trouvé.');
-        }
+        
 
         $services = $servicesRepository->findAll();
         if (!$services) {
             throw $this->createNotFoundException('Veuillez ajouter un service depuis le dashboard. Aucun service trouvé.');
         }
 
-        $horaires = $horaireRepository->findAll();
-        if (!$horaires) {
-            throw $this->createNotFoundException('Veuillez ajouter un horaire depuis le dashboard. Aucun horaire trouvé.');
-        }
+       
 
         // Créer une instance de l'entité Temoignage
         $temoignage = new Temoignage();

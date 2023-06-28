@@ -14,9 +14,7 @@ class HoraireController extends AbstractController
     public function index(HoraireRepository $horaireRepository): Response
     {
         $horaires = $horaireRepository->findAll();
-        if (!$horaires) {
-            throw $this->createNotFoundException('Veuillez ajouter un service depuis le dashboard. Aucun service trouvé.');
-        }
+        
 
         return $this->render('partials/_footer.html.twig', [
             'horaires' => $horaires,
