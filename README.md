@@ -41,10 +41,11 @@ EMPLOYE: employe@garage.ecf mot de passe: password
 
 **TECHNOLOGIES UTILISEES**
 
-Symfony 6.3.1  
-Twig - Moteur de templates - Framework PHP  
+Symfony 6.3.1  Framework PHP  - Back-end
+Twig - Moteur de templates   
 Doctrine - ORM pour la gestion de la base de données  
-HTML, CSS,Bootstrap JavaScript - Front-end  
+HTML, CSS,Bootstrap JavaScript - Front-end 
+Heroku  
 
 Auteur  
 **ACHREF** .
