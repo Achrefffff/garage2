@@ -36,7 +36,7 @@ Quand l'administrateur se connecte, il peut trouver l'onglet "Gestion des employ
 
 **LIEN de l application deployer sur heroku** :   
 http://gentle-cove-35949-a829e8c827e7.herokuapp.com
-ADMIN: vincentparrot@garage.ecf mot de passe: password
+ADMIN: vincentparrot@garage.ecf mot de passe: password  
 EMPLOYE: employe@garage.ecf mot de passe: password  
 
 
