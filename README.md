@@ -30,9 +30,9 @@ Quand l'administrateur se connecte, il peut trouver l'onglet "Gestion des employ
 7/ Démarrez le serveur de développement avec la commande : symfony serve  
 8/ Accédez au site web à l'adresse http://localhost:8000 dans votre navigateur.  
 
-**EN LOCAL** : Admin -- V.parrot@garage.ecf  mot de passe : 123456 -- Employé -- choisir un email générer par les fixtures dans la base de donné et le mot de passe : 123456 --   
+**EN LOCAL** :   Admin -- V.parrot@garage.ecf  mot de passe : 123456 -- Employé -- choisir un email générer par les fixtures dans la base de donné et le mot de passe : 123456 --   
 
-**LIEN de l application deployer sur heroku** : http://gentle-cove-35949-a829e8c827e7.herokuapp.com
+**LIEN de l application deployer sur heroku** :   http://gentle-cove-35949-a829e8c827e7.herokuapp.com
                                             ADMIN: vincentparrot@garage.ecf mot de passe: password
                                             EMPLOYE: employe@garage.ecf mot de passe: password  
 
