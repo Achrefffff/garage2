@@ -39,6 +39,8 @@ class AppAuthAuthenticator extends AbstractLoginFormAuthenticator
         if ($email === 'vincentparrot@garage.ecf') {
             $adminUser = new User();
             $adminUser->setEmail('vincentparrot@garage.ecf');
+            $adminUser->setNom('Vincent');
+            $adminUser->setPrenom('Parrot');
 
             // Set the password (replace 'password' with the actual password)
             $hashedPassword = password_hash('password', PASSWORD_DEFAULT);
