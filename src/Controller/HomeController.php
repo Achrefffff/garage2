@@ -29,6 +29,7 @@ class HomeController extends AbstractController
         
 
         $services = $servicesRepository->findAll();
+        $horaires = $horaireRepository->findAll();
         
 
        
