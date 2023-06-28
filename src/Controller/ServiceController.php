@@ -13,11 +13,9 @@ class ServiceController extends AbstractController
     #[Route('/service', name: 'app_service')]
     public function index(ServicesRepository $servicesRepository): Response
     {
-        // Récupérer tous les objets Service depuis votre source de données
+        
         $services = $servicesRepository->findAll();
-        if (!$services) {
-            throw $this->createNotFoundException('Aucun service trouvé.');
-        }
+        
 
         return $this->render('service/service.html.twig', [
             'services' => $services,
