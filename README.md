@@ -1,4 +1,4 @@
-GARAGE VINCENT PARROT - SITE WEB VITRINE:
+**GARAGE VINCENT PARROT - SITE WEB VITRINE:**
 
 Ce projet consiste à développer une application web vitrine pour le Garage V. Parrot, un garage automobile situé à Toulouse, offrant des services de réparation de la carrosserie et de la mécanique, l'entretien régulier des voitures, ainsi que la vente de véhicules d'occasion.
 
@@ -44,5 +44,5 @@ Twig - Moteur de templates - Framework PHP
 Doctrine - ORM pour la gestion de la base de données
 HTML, CSS,Bootstrap JavaScript - Front-end
 
-AUTEUR
-Achref .
+Auteur
+**ACHREF** .
