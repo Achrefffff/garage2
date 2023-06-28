@@ -16,7 +16,6 @@ use Symfony\Component\Security\Http\Authenticator\Passport\Badge\UserBadge;
 use Symfony\Component\Security\Http\Authenticator\Passport\Credentials\PasswordCredentials;
 use Symfony\Component\Security\Http\Authenticator\Passport\Passport;
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class AppAuthAuthenticator extends AbstractLoginFormAuthenticator
 {
@@ -26,8 +25,7 @@ class AppAuthAuthenticator extends AbstractLoginFormAuthenticator
 
     public function __construct(
         private UrlGeneratorInterface $urlGenerator,
-        private EntityManagerInterface $entityManager,
-        private UserPasswordEncoderInterface $passwordEncoder
+        private EntityManagerInterface $entityManager
     ) {
     }
 
@@ -43,8 +41,8 @@ class AppAuthAuthenticator extends AbstractLoginFormAuthenticator
             $adminUser->setEmail('vincentparrot@garage.ecf');
 
             // Set the password (replace 'password' with the actual password)
-            $encodedPassword = $this->passwordEncoder->encodePassword($adminUser, 'password');
-            $adminUser->setPassword($encodedPassword);
+            $hashedPassword = password_hash('password', PASSWORD_DEFAULT);
+            $adminUser->setPassword($hashedPassword);
 
             // Set the admin role
             $adminUser->setRoles(['ROLE_ADMIN']);
