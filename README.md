@@ -34,7 +34,7 @@ Quand l'administrateur se connecte, il peut trouver l'onglet "Gestion des employ
  Admin -- V.parrot@garage.ecf  mot de passe : 123456 
  Employé -- choisir un email générer par les fixtures dans la base de donné et le mot de passe : 123456   
 
-**LIEN de l application deployer sur heroku** :   
+**LIEN de l'application sur heroku** :   
 http://gentle-cove-35949-a829e8c827e7.herokuapp.com  
 ADMIN: vincentparrot@garage.ecf mot de passe: password  
 EMPLOYE: employe@garage.ecf mot de passe: password  
@@ -45,7 +45,7 @@ EMPLOYE: employe@garage.ecf mot de passe: password
 Symfony 6.3.1  Framework PHP  - Back-end
 Twig - Moteur de templates   
 Doctrine - ORM pour la gestion de la base de données  
-HTML, CSS,Bootstrap JavaScript - Front-end 
+HTML, CSS,Bootstrap JavaScript - Front-end  
 Heroku  
 
 Auteur  
