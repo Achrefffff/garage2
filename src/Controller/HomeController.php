@@ -29,9 +29,7 @@ class HomeController extends AbstractController
         
 
         $services = $servicesRepository->findAll();
-        if (!$services) {
-            throw $this->createNotFoundException('Veuillez ajouter un service depuis le dashboard. Aucun service trouvé.');
-        }
+        
 
        
 
