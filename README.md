@@ -23,7 +23,8 @@ Quand l'administrateur se connecte, il peut trouver l'onglet "Gestion des employ
 
 1/ git clone https://github.com/Achrefffff/garage2  
 2/ Installez les dépendances du projet en exécutant la commande : composer install  
-3/ Configurez les informations de la base de données dans le fichier .env et exécutez les migrations avec la commande     suivante : php bin/console doctrine:migrations:migrate  
+3/ Configurez les informations de la base de données dans le fichier .env et créer la base de données :  
+   php bin/console doctrine:database:create puis exécutez les migrations avec la commande suivante : php bin/console doctrine:migrations:migrate  
 4/ Exécutez la commande suivante : composer require --dev orm-fixtures  
 5/ puis éxécutez la commande : composer require --dev doctrine/doctrine-fixtures-bundle  
 6/ Enfin exécutez la commande suivante pour générer les fichiers de fixtures : php bin/console doctrine:fixtures:load  
